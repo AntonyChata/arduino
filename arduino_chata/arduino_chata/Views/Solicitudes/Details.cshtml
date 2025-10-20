@@ -1,0 +1,69 @@
+﻿@model arduino_chata.Models.Solicitud
+@{
+    ViewBag.Title = "Solicitud " + Model.IdSolicitud;
+    Func<string, string> Safe = s => string.IsNullOrWhiteSpace(s) ? "—" : s;
+}
+
+<h2 class="mb-3">Detalle de Solicitud #@Model.IdSolicitud</h2>
+
+<dl class="dl-horizontal">
+    <dt>Docente</dt>
+    <dd>@Safe(Model.Docente != null ? Model.Docente.Nombre : null)</dd>
+
+    <dt>Curso</dt>
+    <dd>@Safe(Model.Docente != null ? Model.Docente.Curso : null)</dd>
+
+    <dt>Semestre</dt>
+    <dd>@Safe(Model.Semestre)</dd>
+
+    <dt>Tema/Proyecto</dt>
+    <dd>@Safe(Model.TemaProyecto)</dd>
+
+    <dt>Fecha</dt>
+    <dd>@(Model.Fecha.HasValue ? Model.Fecha.Value.ToString("yyyy-MM-dd") : "—")</dd>
+
+    <dt>Hora entrada</dt>
+    <dd>@(Model.HoraEntrada.HasValue ? Model.HoraEntrada.Value.ToString(@"hh\:mm") : "—")</dd>
+
+    <dt>Hora salida</dt>
+    <dd>@(Model.HoraSalida.HasValue ? Model.HoraSalida.Value.ToString(@"hh\:mm") : "—")</dd>
+
+    <dt>Kit</dt>
+    <dd>@Safe(Model.Kit != null ? Model.Kit.Nombre : null)</dd>
+
+    <dt>Estado kit</dt>
+    <dd>@Safe(Model.EstadoKit)</dd>
+
+    <dt>Soporte</dt>
+    <dd>@Safe(Model.PersonalSoporte)</dd>
+</dl>
+
+<h4>Componentes solicitados</h4>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr><th>Componente</th><th>Categoría</th><th>Cantidad</th></tr>
+    </thead>
+    <tbody>
+        @if (Model.Componentes != null && Model.Componentes.Any())
+        {
+            foreach (var sc in Model.Componentes)
+            {
+                var comp = sc.Componente;
+                <tr>
+                    <td>@Safe(comp != null ? comp.Nombre : null)</td>
+                    <td>@Safe(comp != null ? comp.Categoria : null)</td>
+                    <td>@(sc.Cantidad.HasValue ? sc.Cantidad.Value.ToString() : "0")</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="3" class="text-muted">Sin componentes.</td></tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn btn-secondary" })
+    @Html.ActionLink("Nueva solicitud", "Create", null, new { @class = "btn btn-primary" })
+</p>

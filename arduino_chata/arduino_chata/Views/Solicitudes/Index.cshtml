@@ -1,0 +1,217 @@
+﻿@model IEnumerable<arduino_chata.Models.Solicitud>
+@using System.Linq
+@{
+    ViewBag.Title = "Solicitudes";
+    var total = Model?.Count() ?? 0;
+
+    // badge para estado del KIT
+    Func<string, string> EstadoBadge = estado =>
+    {
+        if (string.IsNullOrWhiteSpace(estado)) return "secondary";
+        return estado.Trim() == "Completo" ? "success" : "warning";
+    };
+
+    // badge para estado de la SOLICITUD
+    Func<string, string> Badge = e => e == "Aprobada" ? "success" : (e == "Rechazada" ? "danger" : "secondary");
+}
+
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <div>
+        <h2 class="mb-0">Solicitudes</h2>
+        <small class="text-muted">Total: <strong>@total</strong></small>
+    </div>
+    @Html.ActionLink("Nueva Solicitud", "Create", null, new { @class = "btn btn-primary" })
+</div>
+
+<div class="card shadow-sm mb-3">
+    <div class="card-body">
+        <div class="row g-2">
+            <div class="col-12 col-md-6">
+                <div class="form-floating">
+                    <input id="searchBox" type="text" class="form-control" placeholder="Buscar..." />
+                    <label for="searchBox">Buscar por docente, kit o tema</label>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="form-floating">
+                    <input id="semestreFilter" type="text" class="form-control" placeholder="2025-II">
+                    <label for="semestreFilter">Semestre</label>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="form-floating">
+                    <select id="estadoFilter" class="form-select">
+                        <option value="">Todos</option>
+                        <option value="Completo">Completo</option>
+                        <option value="Solo elementos específicos">Solo elementos específicos</option>
+                    </select>
+                    <label for="estadoFilter">Estado del kit</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (total == 0)
+{
+    <div class="card border-0 shadow-sm">
+        <div class="card-body text-center py-5">
+            <h5 class="mb-2">Aún no hay solicitudes</h5>
+            <p class="text-muted mb-4">Crea tu primera solicitud de préstamo de kit Arduino.</p>
+            @Html.ActionLink("Nueva Solicitud", "Create", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table id="tablaSolicitudes" class="table table-hover align-middle mb-0">
+            <thead class="table-light" style="position: sticky; top: 0; z-index: 1;">
+                <tr>
+                    <th style="width:80px">#</th>
+                    <th style="width:120px">Fecha</th>
+                    <th>Docente</th>
+                    <th style="width:120px">Semestre</th>
+                    <th>Kit</th>
+                    <th style="width:170px">Estado Kit</th>
+                    <th style="width:120px">Estado</th> @* nuevo *@
+                    <th style="min-width:240px">Tema / Proyecto</th>
+                    <th style="width:220px" class="text-end">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var s in Model)
+                {
+                    var estadoKit = s.EstadoKit ?? "";
+                    var estadoSolicitud = string.IsNullOrWhiteSpace(s.EstadoSolicitud) ? "Pendiente" : s.EstadoSolicitud;
+
+                    <tr>
+                        <td class="text-muted">#@s.IdSolicitud</td>
+                        <td>@(s.Fecha?.ToString("yyyy-MM-dd"))</td>
+                        <td>@(s.Docente?.Nombre ?? "-")</td>
+                        <td>@(s.Semestre ?? "-")</td>
+                        <td>@(s.Kit?.Nombre ?? "-")</td>
+                        <td>
+                            <span class="badge bg-@EstadoBadge(estadoKit)">@(!string.IsNullOrWhiteSpace(estadoKit) ? estadoKit : "—")</span>
+                        </td>
+                        <td>
+                            <span class="badge bg-@Badge(estadoSolicitud)">@estadoSolicitud</span>
+                        </td>
+                        <td>
+                            <div class="text-truncate" style="max-width: 420px;" title="@s.TemaProyecto">
+                                @(!string.IsNullOrWhiteSpace(s.TemaProyecto) ? s.TemaProyecto : "—")
+                            </div>
+                        </td>
+                        <td class="text-end">
+                            @Html.ActionLink("Ver", "Details", new { id = s.IdSolicitud }, new { @class = "btn btn-sm btn-outline-secondary me-1" })
+
+                            @using (Html.BeginForm("Aprobar", "Solicitudes", FormMethod.Post, new { @class = "d-inline" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.Hidden("id", s.IdSolicitud)
+                                <button type="submit" class="btn btn-sm btn-success me-1" @(estadoSolicitud == "Aprobada" ? "disabled" : null)>Aprobar</button>
+                            }
+
+                            <button type="button"
+                                    class="btn btn-sm btn-danger"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#confirmDeleteModal"
+                                    data-id="@s.IdSolicitud">
+                                Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+<!-- Modal reutilizable para eliminar -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content" id="confirmDeleteContent">
+            <div class="modal-header">
+                <h5 class="modal-title">Eliminar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center p-5 text-muted">Cargando...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+(function(){
+    // --- Filtros existentes (buscador / semestre / estado kit)
+    const $tbody = document.getElementById('tablaSolicitudes')?.querySelector('tbody');
+    if($tbody){
+        const $q = document.getElementById('searchBox');
+        const $sem = document.getElementById('semestreFilter');
+        const $est = document.getElementById('estadoFilter');
+
+        function normaliza(t){ return (t || '').toString().toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, ''); }
+
+        function filtrar(){
+            const q = normaliza($q.value);
+            const semestre = normaliza($sem.value);
+            const estadoKit = normaliza($est.value);
+
+            [...$tbody.rows].forEach(tr=>{
+                const tds = tr.getElementsByTagName('td');
+                const id      = normaliza(tds[0]?.innerText);
+                const fecha   = normaliza(tds[1]?.innerText);
+                const docente = normaliza(tds[2]?.innerText);
+                const sem     = normaliza(tds[3]?.innerText);
+                const kit     = normaliza(tds[4]?.innerText);
+                const estKit  = normaliza(tds[5]?.innerText); // columna Estado Kit
+                const tema    = normaliza(tds[7]?.innerText); // columna Tema (después de agregar Estado)
+
+                const matchTexto = [id, fecha, docente, kit, tema].some(x => x.includes(q));
+                const matchSem   = semestre === "" || sem.includes(semestre);
+                const matchEstK  = estadoKit === "" || estKit.includes(estadoKit);
+
+                tr.style.display = (matchTexto && matchSem && matchEstK) ? "" : "none";
+            });
+        }
+
+        [$q, $sem, $est].forEach(el => el && el.addEventListener('input', filtrar));
+    }
+
+    // --- Modal: carga la vista previa de eliminación
+    var modal = document.getElementById('confirmDeleteModal');
+    modal?.addEventListener('show.bs.modal', function (event) {
+        var btn = event.relatedTarget;
+        var id = btn.getAttribute('data-id');
+        fetch('@Url.Action("_DeletePreview","Solicitudes")' + '?id=' + id,
+            { headers: { 'X-Requested-With': 'XMLHttpRequest' }})
+        .then(r=>r.text())
+        .then(html=>{
+            document.getElementById('confirmDeleteContent').innerHTML = html;
+        })
+        .catch(_=>{
+            var body = document.querySelector('#confirmDeleteContent .modal-body');
+            if(body) body.innerHTML = '<div class="text-danger">No se pudo cargar la vista previa.</div>';
+        });
+    });
+})();
+    </script>
+}
+
+<style>
+    .table-hover tbody tr:hover {
+        background-color: #f8fafc;
+    }
+
+    .badge.bg-warning {
+        color: #111;
+    }
+    /* mejor contraste cuando es warning */
+    .card .form-floating > .form-control,
+    .card .form-floating > .form-select {
+        padding-top: 1.625rem;
+        padding-bottom: .625rem;
+    }
+</style>

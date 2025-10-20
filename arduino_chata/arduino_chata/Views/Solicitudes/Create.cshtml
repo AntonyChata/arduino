@@ -1,0 +1,154 @@
+﻿@model arduino_chata.Models.ViewModels.SolicitudCreateVM
+@using System.Web.Helpers
+@{
+    ViewBag.Title = "Nueva Solicitud de Préstamo de Kit Arduino";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Create", "Solicitudes", FormMethod.Post, new { @class = "needs-validation", novalidate = "novalidate" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Docente Responsable</label>
+                @Html.DropDownListFor(m => m.IdDocente, Model.Docentes, "-- Seleccione --", new { @class = "form-control", id = "IdDocente" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Curso</label>
+                <input id="cursoBox" class="form-control" readonly />
+                <small class="text-muted">* opcional, puedes guardarlo en docentes.curso</small>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Semestre Académico</label>
+                @Html.TextBoxFor(m => m.Semestre, new { @class = "form-control", placeholder = "2025-II" })
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="form-group">
+                <label>Tema / Proyecto</label>
+                @Html.TextBoxFor(m => m.TemaProyecto, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Fecha</label>
+                @Html.TextBoxFor(m => m.Fecha, "{0:yyyy-MM-dd}", new { @type = "date", @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Hora de entrada</label>
+                @Html.TextBoxFor(m => m.HoraEntrada, new { @type = "time", @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Hora de salida</label>
+                @Html.TextBoxFor(m => m.HoraSalida, new { @type = "time", @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Kit Arduino</label>
+                @Html.DropDownListFor(m => m.IdKit, Model.Kits, "-- Seleccione --", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Estado del Kit</label>
+                @Html.DropDownListFor(m => m.EstadoKit, Model.EstadosKit, "-- Seleccione --", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Personal de Soporte</label>
+                @Html.TextBoxFor(m => m.PersonalSoporte, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <h4>Componentes incluidos en el kit</h4>
+    <p class="text-muted">Marca los componentes que deseas y coloca la cantidad.</p>
+
+    <div id="componentes-lista">
+        <table class="table table-sm table-bordered">
+            <thead>
+                <tr>
+                    <th style="width:32px">Sel</th>
+                    <th>Categoría</th>
+                    <th>Componente</th>
+                    <th>Cant. en kit</th>
+                    <th>Solicitar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Componentes.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Html.CheckBoxFor(m => m.Componentes[i].Seleccionado, new { @class = "chk-comp" })
+                            @Html.HiddenFor(m => m.Componentes[i].IdComponente)
+                            @Html.HiddenFor(m => m.Componentes[i].Categoria)
+                            @Html.HiddenFor(m => m.Componentes[i].Nombre)
+                            @Html.HiddenFor(m => m.Componentes[i].CantidadTotal)
+                        </td>
+                        <td>@Model.Componentes[i].Categoria</td>
+                        <td>@Model.Componentes[i].Nombre</td>
+                        <td>@Model.Componentes[i].CantidadTotal</td>
+                        <td style="width:120px">
+                            @Html.TextBoxFor(m => m.Componentes[i].Cantidad,
+                                new { @class = "form-control form-control-sm qty", @type = "number", min = "0" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit" class="btn btn-success">Enviar Solicitud</button>
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-secondary" })
+}
+
+@section Scripts{
+    <script>
+    // ------ Autocompletar "Curso" desde el docente seleccionado ------
+    var docenteCursoMap = @Html.Raw(Json.Encode(ViewBag.DocenteCursoMap ?? new object[0]));
+    function setCursoFromDocente() {
+        var sel = document.getElementById('IdDocente');
+        var cursoBox = document.getElementById('cursoBox');
+        if(!sel || !cursoBox) return;
+        var id = parseInt(sel.value || 0, 10);
+        var item = (docenteCursoMap || []).find(function (x) { return x.id === id; });
+        cursoBox.value = item && item.curso ? item.curso : '';
+    }
+    document.getElementById('IdDocente')?.addEventListener('change', setCursoFromDocente);
+    document.addEventListener('DOMContentLoaded', setCursoFromDocente);
+
+    // ------ Check de componentes: al desmarcar pone cantidad 0 ------
+    document.querySelectorAll('.chk-comp').forEach(function (cb) {
+        cb.addEventListener('change', function () {
+            var tr = this.closest('tr');
+            var qty = tr.querySelector('.qty');
+            if (!this.checked) qty.value = 0;
+            else if (qty.value === "0" || qty.value === "") qty.value = 1;
+        });
+    });
+    </script>
+}

@@ -1,0 +1,54 @@
+﻿@model arduino_chata.Models.Solicitud
+@functions{
+    string Safe(string s) => string.IsNullOrWhiteSpace(s) ? "—" : s;
+}
+<div class="modal-header">
+    <h5 class="modal-title">Eliminar Solicitud #@Model.IdSolicitud</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+</div>
+<div class="modal-body">
+    <p class="text-danger mb-3"><strong>Esta acción no se puede deshacer.</strong></p>
+
+    <div class="mb-3">
+        <dl class="row mb-0">
+            <dt class="col-sm-4">Docente</dt>
+            <dd class="col-sm-8">@Safe(Model.Docente != null ? Model.Docente.Nombre : null)</dd>
+
+            <dt class="col-sm-4">Fecha</dt>
+            <dd class="col-sm-8">@((Model.Fecha.HasValue) ? Model.Fecha.Value.ToString("yyyy-MM-dd") : "—")</dd>
+
+            <dt class="col-sm-4">Estado</dt>
+            <dd class="col-sm-8">@Safe(Model.EstadoSolicitud)</dd>
+
+            <dt class="col-sm-4">Kit</dt>
+            <dd class="col-sm-8">@Safe(Model.Kit != null ? Model.Kit.Nombre : null)</dd>
+        </dl>
+    </div>
+
+    <h6>Componentes</h6>
+    <ul class="list-group small">
+        @if (Model.Componentes != null && Model.Componentes.Any())
+        {
+            foreach (var sc in Model.Componentes)
+            {
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>@(sc.Componente?.Nombre ?? "—")</span>
+                    <span class="badge bg-secondary">@((sc.Cantidad ?? 0).ToString())</span>
+                </li>
+            }
+        }
+        else
+        {
+            <li class="list-group-item text-muted">Sin componentes.</li>
+        }
+    </ul>
+</div>
+<div class="modal-footer">
+    @using (Html.BeginForm("DeleteConfirmed", "Solicitudes", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("id", Model.IdSolicitud)
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-danger">Eliminar definitivamente</button>
+    }
+</div>

@@ -1,0 +1,245 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|c:\\users\\anton\\onedrive\\escritorio\\arduino\\arduino_chata\\arduino_chata\\views\\solicitudes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|solutionrelative:arduino_chata\\views\\solicitudes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|c:\\users\\anton\\onedrive\\escritorio\\arduino\\arduino_chata\\arduino_chata\\controllers\\solicitudescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|solutionrelative:arduino_chata\\controllers\\solicitudescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|c:\\users\\anton\\onedrive\\escritorio\\arduino\\arduino_chata\\arduino_chata\\views\\solicitudes\\_deletepreview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|solutionrelative:arduino_chata\\views\\solicitudes\\_deletepreview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|c:\\users\\anton\\onedrive\\escritorio\\arduino\\arduino_chata\\arduino_chata\\models\\prestamoscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|solutionrelative:arduino_chata\\models\\prestamoscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|c:\\users\\anton\\onedrive\\escritorio\\arduino\\arduino_chata\\arduino_chata\\models\\entidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|solutionrelative:arduino_chata\\models\\entidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|c:\\users\\anton\\onedrive\\escritorio\\arduino\\arduino_chata\\arduino_chata\\views\\solicitudes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|solutionrelative:arduino_chata\\views\\solicitudes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|c:\\users\\anton\\onedrive\\escritorio\\arduino\\arduino_chata\\arduino_chata\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|solutionrelative:arduino_chata\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|c:\\users\\anton\\onedrive\\escritorio\\arduino\\arduino_chata\\arduino_chata\\models\\viewmodels\\solicitudcreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|solutionrelative:arduino_chata\\models\\viewmodels\\solicitudcreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|c:\\users\\anton\\onedrive\\escritorio\\arduino\\arduino_chata\\arduino_chata\\views\\solicitudes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|solutionrelative:arduino_chata\\views\\solicitudes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|c:\\users\\anton\\onedrive\\escritorio\\arduino\\arduino_chata\\arduino_chata\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|solutionrelative:arduino_chata\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|c:\\users\\anton\\onedrive\\escritorio\\arduino\\arduino_chata\\arduino_chata\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|solutionrelative:arduino_chata\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|c:\\users\\anton\\onedrive\\escritorio\\arduino\\arduino_chata\\arduino_chata\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|solutionrelative:arduino_chata\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|c:\\users\\anton\\onedrive\\escritorio\\arduino\\arduino_chata\\arduino_chata\\model1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D95E8AB8-A3A7-4F58-A743-D469C1D716BF}|arduino_chata\\arduino_chata.csproj|solutionrelative:arduino_chata\\model1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_DeletePreview.cshtml",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Views\\Solicitudes\\_DeletePreview.cshtml",
+              "RelativeDocumentMoniker": "arduino_chata\\Views\\Solicitudes\\_DeletePreview.cshtml",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Views\\Solicitudes\\_DeletePreview.cshtml",
+              "RelativeToolTip": "arduino_chata\\Views\\Solicitudes\\_DeletePreview.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAkwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-20T22:14:21.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Views\\Solicitudes\\Details.cshtml",
+              "RelativeDocumentMoniker": "arduino_chata\\Views\\Solicitudes\\Details.cshtml",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Views\\Solicitudes\\Details.cshtml",
+              "RelativeToolTip": "arduino_chata\\Views\\Solicitudes\\Details.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAkwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-20T21:51:51.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Views\\Solicitudes\\Create.cshtml",
+              "RelativeDocumentMoniker": "arduino_chata\\Views\\Solicitudes\\Create.cshtml",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Views\\Solicitudes\\Create.cshtml",
+              "RelativeToolTip": "arduino_chata\\Views\\Solicitudes\\Create.cshtml",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAkwJoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-20T21:51:26.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Views\\Solicitudes\\Index.cshtml",
+              "RelativeDocumentMoniker": "arduino_chata\\Views\\Solicitudes\\Index.cshtml",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Views\\Solicitudes\\Index.cshtml",
+              "RelativeToolTip": "arduino_chata\\Views\\Solicitudes\\Index.cshtml",
+              "ViewState": "AgIAALgAAAAAAAAAAAAkwNkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-20T21:51:02.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SolicitudesController.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Controllers\\SolicitudesController.cs",
+              "RelativeDocumentMoniker": "arduino_chata\\Controllers\\SolicitudesController.cs",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Controllers\\SolicitudesController.cs",
+              "RelativeToolTip": "arduino_chata\\Controllers\\SolicitudesController.cs",
+              "ViewState": "AgIAALoAAAAAAAAAAAAIwNkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T21:50:32.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SolicitudCreateVM.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Models\\ViewModels\\SolicitudCreateVM.cs",
+              "RelativeDocumentMoniker": "arduino_chata\\Models\\ViewModels\\SolicitudCreateVM.cs",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Models\\ViewModels\\SolicitudCreateVM.cs",
+              "RelativeToolTip": "arduino_chata\\Models\\ViewModels\\SolicitudCreateVM.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA9wDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T21:50:08.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PrestamosContext.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Models\\PrestamosContext.cs",
+              "RelativeDocumentMoniker": "arduino_chata\\Models\\PrestamosContext.cs",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Models\\PrestamosContext.cs",
+              "RelativeToolTip": "arduino_chata\\Models\\PrestamosContext.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAowDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T21:48:54.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "arduino_chata\\App_Start\\RouteConfig.cs",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "arduino_chata\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T21:52:07.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Entidades.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Models\\Entidades.cs",
+              "RelativeDocumentMoniker": "arduino_chata\\Models\\Entidades.cs",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Models\\Entidades.cs",
+              "RelativeToolTip": "arduino_chata\\Models\\Entidades.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAqwDIAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T21:49:18.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Web.config",
+              "RelativeDocumentMoniker": "arduino_chata\\Web.config",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Web.config",
+              "RelativeToolTip": "arduino_chata\\Web.config",
+              "ViewState": "AgIAADUAAAAAAAAAAAArwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-10-20T21:53:56.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "arduino_chata\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "arduino_chata\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-20T21:56:46.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "arduino_chata\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "arduino_chata\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-20T21:56:04.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Model1.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Model1.cs",
+              "RelativeDocumentMoniker": "arduino_chata\\Model1.cs",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Escritorio\\arduino\\arduino_chata\\arduino_chata\\Model1.cs",
+              "RelativeToolTip": "arduino_chata\\Model1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T21:43:48.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
